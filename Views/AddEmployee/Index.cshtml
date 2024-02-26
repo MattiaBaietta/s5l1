@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using (Html.BeginForm())
+{
+    <form name="Employee" action="submit" method="post">
+        Inserisci dati dipendente:
+        <div>
+            Nome:<input type="text" name="Nome" />
+        </div>
+        <div>
+            Cognome:<input type="text" name="Cognome" />
+        </div>
+        <div>
+            Indirizzo:<input type="text" name="Indirizzo" />
+        </div>
+        <div>
+            Codice Fiscale:<input type="text" name="Codfiscale" />
+        </div>
+        <div>
+            Coniugato:<input name="coniugato" type="radio" value="Si" />
+            <input type="radio" name="coniugato" value="No" />
+        </div>
+        <div>
+            Num Figli:<input type="text" name="Nfigli" />
+        </div>
+        <div>
+            Mansione:<input type="text" name="Mansione" />
+        </div>
+        <input type="button" value="Aggiungi Impiegato" />
+
+    </form>
+}
