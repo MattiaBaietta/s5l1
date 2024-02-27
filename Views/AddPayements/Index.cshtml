@@ -3,7 +3,7 @@
 *@
 @{
 }
-<form action="submit" method="post">
+<form asp-action="Add" asp-controller="AddPayements"  method="post">
     Inserisci nuovo pagamento:
   
     <div>
@@ -21,7 +21,18 @@
         Tipo pagamento: Stipendio<input name="coniugato" type="radio" value="Stipendio" />
         Acconto:<input type="radio" name="coniugato" value="Acconto" />
     </div>
-    <input type="button" value="Aggiungi Pagamento" />
+    <button>Aggiungi Pagamento</button>
     
 
 </form>
+
+<ul>
+    @{
+        foreach (Pagamenti pagamento in Model)
+        {
+            <li>
+                cfiscale: @pagamento.Cfiscale, Datainizio: @pagamento.Datainizio, Datafine:@pagamento.Datafine, Valore:@pagamento.Pagamento;
+            </li>
+        }
+    }
+</ul>

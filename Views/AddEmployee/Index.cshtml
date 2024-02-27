@@ -4,9 +4,7 @@
 @{
 }
 
-@using (Html.BeginForm())
-{
-    <form name="Employee" action="submit" method="post">
+<form asp-action="Add" asp-controller="AddEmployee" method="post">
         Inserisci dati dipendente:
         <div>
             Nome:<input type="text" name="Nome" />
@@ -21,8 +19,8 @@
             Codice Fiscale:<input type="text" name="Codfiscale" />
         </div>
         <div>
-            Coniugato:<input name="coniugato" type="radio" value="Si" />
-            <input type="radio" name="coniugato" value="No" />
+            Coniugato:<input name="Coniugato" type="radio" value="Si" />
+            <input type="radio" name="Coniugato" value="No" />
         </div>
         <div>
             Num Figli:<input type="text" name="Nfigli" />
@@ -30,7 +28,18 @@
         <div>
             Mansione:<input type="text" name="Mansione" />
         </div>
-        <input type="button" value="Aggiungi Impiegato" />
+        <button>Aggiungi Impiegato</button>
 
-    </form>
-}
+ </form>
+
+<ul>
+    @{
+        foreach (Dipendenti dipendente in Model)
+        {
+            <li>
+                Nome: @dipendente.Nome, Cognome: @dipendente.Cognome, Indirizzo:@dipendente.Indirizzo,;
+            </li>
+        }
+    }
+</ul>
+

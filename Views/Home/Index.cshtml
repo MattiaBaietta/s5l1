@@ -1,4 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<ul>
+    @{
+        foreach(Dipendenti dipendente in Database.GetDipendenti())
+        { 
+                <li>
+                    @dipendente.Nome;
+                </li>
+        }
+    }
+</ul>
